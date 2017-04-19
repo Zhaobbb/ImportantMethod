@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="#FF989E"
+        android:text="微课"
+        android:textSize="20sp"
+        android:textColor="#fff"
+        android:gravity="center"/>
+<com.example.joker.importantmethod.View.RefreshableView
+    android:id="@+id/refreshableview2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/lesson_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+
+</com.example.joker.importantmethod.View.RefreshableView>
+</LinearLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="10dp"
+    android:background="#fff"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp"
+    >
+<com.example.joker.importantmethod.View.CircularImageView
+    android:src="@drawable/aaaa"
+    android:layout_width="50dp"
+    android:id="@+id/quanzi_head"
+    android:layout_height="50dp" />
+    <LinearLayout
+        android:layout_toRightOf="@+id/quanzi_head"
+        android:layout_marginLeft="20dp"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/quanzi_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="自然观察犬"
+
+            android:textSize="18sp"
+            />
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:id="@+id/quanzi_linear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="帖子"/>
+            <TextView
+                android:id="@+id/quanzi_num"
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="150"
+                android:textColor="#FFA3A8"
+                android:textSize="14sp"
+                />
+
+
+        </LinearLayout>
+        <TextView
+            android:layout_marginTop="5dp"
+            android:id="@+id/quanzi_describe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="说分手的放松放松地方都是"
+            android:textSize="10sp"/>
+    </LinearLayout>
+
+    <ImageView
+        android:src="@drawable/icon_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentRight="true"
+        />
+</RelativeLayout>

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="#F7F7F7"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="#FF989E">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:id="@+id/mine"
+            android:text="我的"
+            android:textSize="20sp"
+            android:textColor="#fff"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="申请达人"/>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:background="#fff"
+        android:paddingTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+        <ImageView
+            android:id="@+id/mine_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/chat_default_user_avatar"/>
+        <ImageView
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="45dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/lab_level_hear1_big"/>
+
+        <TextView
+            android:id="@+id/mine_name"
+            android:layout_toRightOf="@id/mine_head"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="赵镜博"/>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/mine_head"
+            android:layout_below="@id/mine_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="关注"/>
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#FFA3A8"/>
+
+            <TextView
+                android:layout_marginLeft="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="粉丝"/>
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#FFA3A8"/>
+
+            <ImageView
+                android:layout_marginLeft="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_task_money"/>
+            <TextView
+                android:layout_marginLeft="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="元子币"/>
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+             />
+        </LinearLayout>
+        <ImageView
+            android:src="@drawable/icon_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_alignParentRight="true"
+            />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:background="#fff"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="我发布的"
+            android:drawableTop="@drawable/icon_user_release"
+            android:gravity="center_horizontal"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="我的活动"
+            android:drawableTop="@drawable/icon_user_event"
+            android:gravity="center_horizontal"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="订单"
+            android:drawableTop="@drawable/icon_user_my_order"
+            android:gravity="center_horizontal"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="收藏"
+            android:gravity="center_horizontal"
+            android:drawableTop="@drawable/icon_user_my_collect"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <TextView
+        android:background="#fff"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="   我的微课"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:drawableLeft="@drawable/icon_user_podcast"
+        android:drawableRight="@drawable/icon_arrow"
+        android:paddingRight="10dp"
+        />
+    <TextView
+        android:background="#fff"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="   我加入的圈子"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:drawableLeft="@drawable/icon_user_join_circle"
+        android:drawableRight="@drawable/icon_arrow"
+        android:paddingRight="10dp"
+        />
+    <TextView
+        android:background="#fff"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="   消息"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:drawableLeft="@drawable/icon_user_message"
+        android:drawableRight="@drawable/icon_arrow"
+        android:paddingRight="10dp"
+        />
+    <TextView
+        android:background="#fff"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="   意见反馈"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:drawableLeft="@drawable/icon_user_feedback"
+        android:drawableRight="@drawable/icon_arrow"
+        android:paddingRight="10dp"
+        />
+    <TextView
+        android:background="#fff"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="   设置"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:drawableLeft="@drawable/icon_user_setting"
+        android:drawableRight="@drawable/icon_arrow"
+        android:paddingRight="10dp"
+        />
+</LinearLayout>

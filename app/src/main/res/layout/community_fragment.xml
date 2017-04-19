@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="55dp"
+        android:background="#FF989E">
+
+
+        <RadioGroup
+            android:id="@+id/community_radiogroup_miaozhao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/quanzi"
+                android:layout_width="55dp"
+                android:layout_height="wrap_content"
+                android:text="圈子"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textColor="@drawable/titletextcolor"
+                android:button="@null"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/titlebottom"
+                />
+            <RadioButton
+                android:gravity="center"
+                android:textSize="20sp"
+                android:background="@drawable/titlebottom"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/huodong"
+                android:layout_marginLeft="10dp"
+                android:layout_width="55dp"
+                android:layout_height="wrap_content"
+                android:text="活动"
+                android:textColor="@drawable/titletextcolor"
+                android:button="@null"
+
+                />
+        </RadioGroup>
+
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/community_fragment_framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></FrameLayout>
+</LinearLayout>
