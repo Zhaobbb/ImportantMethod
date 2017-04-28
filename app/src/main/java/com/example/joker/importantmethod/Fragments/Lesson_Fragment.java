@@ -1,9 +1,18 @@
 package com.example.joker.importantmethod.Fragments;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.Volley;
 import com.example.joker.importantmethod.Data.LessonData;
 import com.example.joker.importantmethod.Data.ViewpagerData;
+import com.example.joker.importantmethod.Listener.CustomRequest;
 import com.example.joker.importantmethod.R;
 import com.example.joker.importantmethod.View.RefreshableView;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  * Created by joker on 2017/4/14.
@@ -19,9 +28,11 @@ public class Lesson_Fragment extends BaseFragment {
     protected int getRecyclerview() {
         return R.id.lesson_recyclerview;
     }
-    private int vimages[] = {
-            R.drawable.eee,R.drawable.ytytyt,R.drawable.qwqwq,R.drawable.ttt
-    };
+    private String[] vimages = new String[4];
+//            {
+//            "http://d.5857.com/fmsn_170307/desk_014.jpg","http://d.5857.com/jxxg_170309/desk_002.jpg"
+//            , "http://d.5857.com/xgs_150428/desk_005.jpg", "http://d.5857.com/ctmn_170307/desk_008.jpg"
+//    };
     private int images[] = {
             R.drawable.eee,R.drawable.ytytyt,R.drawable.qwqwq,R.drawable.ttt,R.drawable.eee,R.drawable.ytytyt,R.drawable.qwqwq,R.drawable.ttt
     };
@@ -33,25 +44,68 @@ public class Lesson_Fragment extends BaseFragment {
 
 
     private RefreshableView refreshableView;
+
+    private RequestQueue mRequestQueue;
+    String LessonPath="http://169.254.217.200:8989/getlesson";
     @Override
     protected void initView() {
         init();
 
-        ViewpagerData viewpagerData=new ViewpagerData();
-        viewpagerData.setImgs(images);
+        mRequestQueue= Volley.newRequestQueue(getContext());
+        CustomRequest lessonrequest=new CustomRequest(LessonPath, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jsonObject=new JSONObject(response);
 
-        baselist.add(viewpagerData);
+                    //添加头部轮播
+                    JSONObject viewpagerob=jsonObject.getJSONObject("viewpagerData");
+                    JSONArray jsonArray11=viewpagerob.getJSONArray("imgs");
+                    for(int i=0;i<jsonArray11.length();i++){
+                        vimages[i]=jsonArray11.getString(i);
+                    }
+                    ViewpagerData viewpagerData=new ViewpagerData();
+                    viewpagerData.setImgs(vimages);
 
-        for(int i=0;i<prices.length;i++){
-            LessonData lessonData=new LessonData();
-            lessonData.setLesson_img(images[i]);
-                    lessonData.setLesson_date(dates[i]);
-            lessonData.setLesson_looker(lookers[i]);
-                    lessonData.setLesson_price(prices[i]);
-            lessonData.setLesson_provider(providers[i]);
-                    lessonData.setLesson_title(titles[i]);
-            baselist.add(lessonData);
-        }
+                    baselist.add(viewpagerData);
+
+                    //添加Lesson数据
+                    JSONObject lessonob=jsonObject.getJSONObject("lessonData");
+                    JSONArray lessonimg=lessonob.getJSONArray("lesson_img");
+                    JSONArray lessontitle=lessonob.getJSONArray("lesson_title");
+                    JSONArray lessondate=lessonob.getJSONArray("lesson_date");
+                    JSONArray lessonprice=lessonob.getJSONArray("lesson_price");
+                    JSONArray lessonprovider=lessonob.getJSONArray("lesson_provider");
+                    JSONArray lessonlooker=lessonob.getJSONArray("lesson_looker");
+
+
+                    for(int i=0;i<prices.length;i++){
+                        LessonData lessonData=new LessonData();
+                        lessonData.setLesson_img(lessonimg.getString(i));
+                        lessonData.setLesson_date(lessondate.getString(i));
+                        lessonData.setLesson_looker(lessonlooker.getInt(i));
+                        lessonData.setLesson_price(lessonprice.getString(i));
+                        lessonData.setLesson_provider(lessonprovider.getString(i));
+                        lessonData.setLesson_title(lessontitle.getString(i));
+                        baselist.add(lessonData);
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
+
+        mRequestQueue.add(lessonrequest);
+
+
+
+
 
         refreshableView= (RefreshableView) view.findViewById(R.id.refreshableview2);
         refreshableView.setOnRefreshListener(new RefreshableView.PullToRefreshListener() {

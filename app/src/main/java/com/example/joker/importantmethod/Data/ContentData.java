@@ -5,15 +5,15 @@ package com.example.joker.importantmethod.Data;
  */
 
 public class ContentData extends BaseData {
-    int head_img;
+    String head_img;
     String super_name;
     String super_describe;
 
-    public int getHead_img() {
+    public String getHead_img() {
         return head_img;
     }
 
-    public void setHead_img(int head_img) {
+    public void setHead_img(String head_img) {
         this.head_img = head_img;
     }
 

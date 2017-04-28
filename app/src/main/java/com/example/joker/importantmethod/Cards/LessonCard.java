@@ -9,6 +9,7 @@ import android.util.AttributeSet;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.joker.importantmethod.Data.BaseData;
 import com.example.joker.importantmethod.Data.LessonData;
 import com.example.joker.importantmethod.R;
@@ -62,7 +63,12 @@ public class LessonCard extends BaseCard {
         }
         LessonData lessonData=(LessonData)basedata;
 
-        lesson_img.setImageResource(lessonData.getLesson_img());
+        Glide.with(getContext())
+                .load(lessonData.getLesson_img())
+                .placeholder(R.mipmap.ic_launcher)
+                .error(R.mipmap.ic_launcher)
+                .into(lesson_img);
+
         lesson_title.setText(lessonData.getLesson_title());
         lesson_date.setText(lessonData.getLesson_date());
         lesson_price.setText(lessonData.getLesson_price());

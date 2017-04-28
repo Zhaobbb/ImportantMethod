@@ -5,18 +5,18 @@ package com.example.joker.importantmethod.Data;
  */
 
 public class Community_secondData extends BaseData {
-    int community_second_img;
+    String community_second_img;
     String community_second_title;
     String community_second_date;
     String community_second_address;
     String community_second_price;
     int community_second_taker;
 
-    public int getCommunity_second_img() {
+    public String getCommunity_second_img() {
         return community_second_img;
     }
 
-    public void setCommunity_second_img(int community_second_img) {
+    public void setCommunity_second_img(String community_second_img) {
         this.community_second_img = community_second_img;
     }
 

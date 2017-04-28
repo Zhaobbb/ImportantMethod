@@ -7,16 +7,16 @@ import java.util.ArrayList;
  */
 
 public class Hot_idea_Data extends BaseData {
-    ArrayList<Integer> hot_idea_img;
+    ArrayList<String> hot_idea_img;
     ArrayList<String> hot_idea_text;
     ArrayList<String> hot_idea_provider;
     ArrayList<Integer> hot_idea_interestnum;
 
-    public ArrayList<Integer> getHot_idea_img() {
+    public ArrayList<String> getHot_idea_img() {
         return hot_idea_img;
     }
 
-    public void setHot_idea_img(ArrayList<Integer> hot_idea_img) {
+    public void setHot_idea_img(ArrayList<String> hot_idea_img) {
         this.hot_idea_img = hot_idea_img;
     }
 

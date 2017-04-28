@@ -33,13 +33,13 @@
         android:orientation="vertical"
         android:background="#fffff0"
         android:paddingBottom="15dp">
-    <ImageView
+    <com.example.joker.importantmethod.View.CircularImageView
         android:id="@+id/head_picture"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:src="@drawable/touxiang"/>
+        android:src="@drawable/eee"/>
 
     <TextView
         android:id="@+id/superman_name"

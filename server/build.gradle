@@ -1,0 +1,14 @@
+apply plugin: 'java'
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile files('libs/json-lib.jar')
+    compile 'com.github.bumptech.glide:glide:3.5.2'
+    compile files('libs/gson-2.2.1.jar')
+}
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+
+}
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"

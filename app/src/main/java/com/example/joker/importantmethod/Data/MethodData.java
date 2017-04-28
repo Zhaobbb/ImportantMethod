@@ -5,14 +5,16 @@ package com.example.joker.importantmethod.Data;
  */
 
 public class MethodData extends BaseData {
-    int methodcard_background;
+    String methodcard_background;
     String methodcard_title;
+    int methodcard_sawnum;
+    int methodcard_likenum;
 
-    public int getMethodcard_background() {
+    public String getMethodcard_background() {
         return methodcard_background;
     }
 
-    public void setMethodcard_background(int methodcard_background) {
+    public void setMethodcard_background(String methodcard_background) {
         this.methodcard_background = methodcard_background;
     }
 
@@ -40,6 +42,5 @@ public class MethodData extends BaseData {
         this.methodcard_likenum = methodcard_likenum;
     }
 
-    int methodcard_sawnum;
-    int methodcard_likenum;
+
 }

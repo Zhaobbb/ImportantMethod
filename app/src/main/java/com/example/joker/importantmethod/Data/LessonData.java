@@ -5,18 +5,18 @@ package com.example.joker.importantmethod.Data;
  */
 
 public class LessonData extends BaseData {
-    int lesson_img;
+    String lesson_img;
     String lesson_title;
     String lesson_date;
     String lesson_price;
     String lesson_provider;
     int lesson_looker;
 
-    public int getLesson_img() {
+    public String getLesson_img() {
         return lesson_img;
     }
 
-    public void setLesson_img(int lesson_img) {
+    public void setLesson_img(String lesson_img) {
         this.lesson_img = lesson_img;
     }
 

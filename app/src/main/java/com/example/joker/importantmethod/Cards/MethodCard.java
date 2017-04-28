@@ -7,9 +7,11 @@ import android.support.annotation.Nullable;
 import android.support.annotation.StyleRes;
 import android.util.AttributeSet;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.joker.importantmethod.Data.BaseData;
 import com.example.joker.importantmethod.Data.MethodData;
 import com.example.joker.importantmethod.R;
@@ -52,12 +54,18 @@ public class MethodCard extends BaseCard {
         }
         MethodData methodData=(MethodData)basedata;
 
+        ImageView method_card_img= (ImageView) mview.findViewById(R.id.method_card_img);
         TextView method_title= (TextView) mview.findViewById(R.id.methodcard_title);
         TextView method_sawnum= (TextView) mview.findViewById(R.id.method_card_sawnum);
         TextView method_likenum= (TextView) mview.findViewById(R.id.method_card_likenum);
 //        View view = LayoutInflater.from(getContext()).inflate(R.layout.methodcard,null);
 
-        mview.setBackgroundResource(methodData.getMethodcard_background());
+
+        Glide.with(getContext()).load(methodData.getMethodcard_background())
+                .placeholder(R.mipmap.ic_launcher)
+                .error(R.mipmap.ic_launcher)
+                .into(method_card_img);
+
         method_title.setText(methodData.getMethodcard_title());
         method_sawnum.setText(methodData.getMethodcard_sawnum()+"");
         method_likenum.setText(methodData.getMethodcard_likenum()+"");

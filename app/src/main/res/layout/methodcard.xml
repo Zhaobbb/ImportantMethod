@@ -5,6 +5,13 @@
 
     >
 
+    <ImageView
+        android:id="@+id/method_card_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/eee"
+        android:scaleType="fitXY"
+        />
     <TextView
         android:id="@+id/methodcard_title"
         android:text="那些你不知道的亲子手工活儿"

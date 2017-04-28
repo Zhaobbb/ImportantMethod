@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.joker.importantmethod.Data.BaseData;
 import com.example.joker.importantmethod.Data.ContentData;
 import com.example.joker.importantmethod.R;
@@ -61,7 +62,12 @@ public class ContentCard extends BaseCard {
             return;
         }
         ContentData contentData=(ContentData)basedata;
-        head_picture.setImageResource(contentData.getHead_img());
+//        head_picture.setImageResource(contentData.getHead_img());
+        Glide.with(getContext())
+                .load(contentData.getHead_img())
+                .placeholder(R.mipmap.ic_launcher)
+                .error(R.mipmap.ic_launcher)
+                .into(head_picture);
         super_describe.setText(contentData.getSuper_describe());
         super_name.setText(contentData.getSuper_name());
     }

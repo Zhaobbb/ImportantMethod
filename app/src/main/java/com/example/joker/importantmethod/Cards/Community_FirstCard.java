@@ -9,6 +9,7 @@ import android.util.AttributeSet;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.joker.importantmethod.Data.BaseData;
 import com.example.joker.importantmethod.Data.Community_firstData;
 import com.example.joker.importantmethod.R;
@@ -59,7 +60,13 @@ public class Community_FirstCard extends BaseCard {
             return;
         }
         Community_firstData community_firstData=(Community_firstData)basedata;
-        community_first_head.setImageResource(community_firstData.getCommunity_first_head());
+
+        Glide.with(getContext())
+                .load(community_firstData.getCommunity_first_head())
+                .placeholder(R.mipmap.ic_launcher)
+                .error(R.mipmap.ic_launcher)
+                .into(community_first_head);
+//        community_first_head.setImageResource(community_firstData.getCommunity_first_head());
         community_first_title.setText(community_firstData.getCommunity_first_title());
         community_first_num.setText(community_firstData.getCommunity_first_num()+"");
         community_first_text.setText(community_firstData.getCommunity_first_text());

@@ -5,16 +5,16 @@ package com.example.joker.importantmethod.Data;
  */
 
 public class ViewpagerData extends BaseData {
-    int imgs[];
+    String[] vpimgs;
 
 
 
-    public int[] getImgs() {
-        return imgs;
+    public String[] getImgs() {
+        return vpimgs;
     }
 
-    public void setImgs(int[] imgs) {
-        this.imgs = imgs;
+    public void setImgs(String[] imgs) {
+        this.vpimgs = imgs;
     }
 
 
